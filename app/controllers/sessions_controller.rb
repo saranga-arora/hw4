@@ -19,15 +19,15 @@ class SessionsController < ApplicationController
         flash[:notice] = "Password is incorrect."
         redirect_to "/sessions/new"
       end 
-      else 
+    else 
       flash[:notice] = "No user with that email address."
       redirect_to "/sessions/new"
-      end
+    end
   end
 
   def destroy
     session["user_id"] = nil
-    flash[:notice] = "You have been logged out"
+    flash[:notice] = "You have been logged out."
     redirect_to "/sessions/new"
   end
 end
