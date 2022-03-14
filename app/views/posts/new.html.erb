@@ -14,12 +14,13 @@
       <%= form.label "posted_on" %>
       <%= form.date_field "posted_on" %>
     </p>
+    <!--adds support for image upload -->
     <p>
       <%= form.label "image", class: "form-label" %>
       <%= form.file_field "uploaded_image", accept: "image/png,image/jpg,image/jpeg", class: "form-control form-control-sm" %>
     </p> 
     <p>
-      <%= form.submit "Create Post", class: "btn btn-primary btn-sm" %>
+      <%= form.submit "Create Post", class: "btn btn-primary btn-sm" %> <!-- turns into button -->
     </p>
     <%= form.hidden_field "place_id" %>
   <% end %>
