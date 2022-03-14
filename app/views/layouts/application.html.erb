@@ -15,9 +15,13 @@
     </div>
     <div>
       <a href="/">Home</a>
-      <%#= button_to "Logout", "/sessions/logout", method: :delete %>
-      <a href="/sessions/new">Login</a>
-      <a href="/users/new">Signup</a>
+        <% if @current_user %>
+            Welcome <%= @current_user.first_name %>
+            <%= button_to "Logout", "/sessions/logout", method: :delete %>
+        <% else %>
+            <a href="/sessions/new" class="btn btn-default">Login</a> |
+            <a href="/users/new" class="btn btn-default">Sign Up</a>
+        <% end %>
     </div>
 
     <%= yield %>
